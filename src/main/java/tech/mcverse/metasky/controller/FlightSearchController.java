@@ -24,4 +24,12 @@ public class FlightSearchController {
     public String home (){
         return "Metasky flight metasearch engine";
     }
+    @GetMapping("/book")
+    public List<FlightResult> book () {
+    }
+    @GetMapping("/lengt")
+
+    public List<FlightResult> beginDate () {
+
+    }
 }

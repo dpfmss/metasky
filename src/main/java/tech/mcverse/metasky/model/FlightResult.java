@@ -7,8 +7,13 @@ public class FlightResult {
     private String to;
     private String departureTime;
     private String arrivalTime;
-
     public FlightResult(String skyJet, double v, Object from, Object to, String time, String time1) {
+        this.airline = skyJet;
+        this.price = v;
+        this.from = from.toString();
+        this.to = to.toString();
+        this.departureTime = time;
+        this.arrivalTime = time1;
     }
     public String getAirline(){
         return airline;
