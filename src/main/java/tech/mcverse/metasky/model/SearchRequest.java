@@ -12,6 +12,8 @@ public class SearchRequest {
     public Object getTo() {
         return null;
     }
+    public String getDate() {
+        return null;
+    }
 
-    // getters/setters
 }

@@ -14,7 +14,6 @@ public class AirFranceClient implements FlightProvider {
     public String getProviderName() {
         return "AirFrance";
     }
-
     @Override
     public List<FlightResult> searchFlights(SearchRequest request) {
         return Arrays.asList(

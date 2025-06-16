@@ -10,6 +10,16 @@ public class FlightResult {
 
     public FlightResult(String skyJet, double v, Object from, Object to, String time, String time1) {
     }
-
-    // getters/setters, constructor omitted for brevity
+    public String getAirline(){
+        return airline;
+    }
+    public double getPrice(){
+        return price;
+    }
+    public String getFrom(){
+        return from;
+    }
+    public String getTo(){
+        return to;
+    }
 }
