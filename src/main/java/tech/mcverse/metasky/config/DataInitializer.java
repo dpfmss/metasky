@@ -1,26 +1,23 @@
-// 10. Data Initialization Component
+// Initialisation of components for the MVP
 package tech.mcverse.metasky.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import tech.mcverse.metasky.repository.UserService;
 import tech.mcverse.metasky.service.UserService;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
-
     @Autowired
     private UserService userService;
-
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("=== Metasky MVP Data Initialized ===");
-        System.out.println("Total Users: " + userService.getTotalUsers());
-        System.out.println("Available endpoints:");
-        System.out.println("- GET /api/users (get all users)");
-        System.out.println("- POST /api/search (search flights/cars)");
-        System.out.println("- POST /api/book (create booking)");
-        System.out.println("- GET /api/booking/{id} (get booking)");
+        System.out.println("=== Metasky MVP donnée initialisé ===");
+        System.out.println("Utilisateurs : " + userService.getTotalUsers());
+        System.out.println("Les endpoints disponible:");
+        System.out.println("- GET /api/users (retournes tous les utilisateurs)");
+        System.out.println("- POST /api/search (recherche vols/voiture)");
+        System.out.println("- POST /api/book (creation d'une reservation booking)");
+        System.out.println("- GET /api/booking/{id} (retourne une reservation booking)");
         System.out.println("=====================================");
     }
 }

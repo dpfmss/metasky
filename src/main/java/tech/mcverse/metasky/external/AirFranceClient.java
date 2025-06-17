@@ -1,9 +1,8 @@
+//Implement FlightProvider
 package tech.mcverse.metasky.external;
-
 import org.springframework.stereotype.Component;
 import tech.mcverse.metasky.model.FlightResult;
 import tech.mcverse.metasky.model.SearchRequest;
-
 import java.util.Arrays;
 import java.util.List;
 

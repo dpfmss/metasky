@@ -1,4 +1,8 @@
+
 package tech.mcverse.metasky.service;
 
-public interface Searchable {
+import java.util.List;
+
+public interface SearchableService<T, R> {
+    List<R> search(T request);
 }

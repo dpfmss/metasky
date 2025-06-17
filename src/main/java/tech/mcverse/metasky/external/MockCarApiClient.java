@@ -1,16 +1,11 @@
 package tech.mcverse.metasky.external;
-
 import org.springframework.stereotype.Component;
 import tech.mcverse.metasky.model.CarResult;
-import tech.mcverse.metasky.model.FlightResult;
 import tech.mcverse.metasky.model.SearchRequest;
-
 import java.util.Arrays;
 import java.util.List;
-
 @Component
 public class MockCarApiClient {
-
     public List<CarResult> getCars(SearchRequest request) {
         return Arrays.asList(
                 new CarResult("Toyota Yaris", 77.0, request.getFrom(), request.getTo(), "08:00", "11:00"),
