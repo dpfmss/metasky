@@ -18,18 +18,10 @@ public class FlightSearchController {
     @PostMapping("/search")
     public List<FlightResult> search(@RequestBody SearchRequest request) {
         //return "Search Result";
-        return service.searchFlights(request);
+        return service.search(request);
     }
     @GetMapping ({"/","home"})
     public String home (){
-        return "Metasky flight metasearch engine";
-    }
-    @GetMapping("/book")
-    public List<FlightResult> book () {
-    }
-    @GetMapping("/lengt")
-
-    public List<FlightResult> beginDate () {
-
+        return "Metasky flight metasearch engine service";
     }
 }

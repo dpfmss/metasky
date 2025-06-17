@@ -1,17 +1,16 @@
-package tech.mcverse.metasky.repository;
-
+package tech.mcverse.metasky.repository.impl;
 import org.springframework.stereotype.Repository;
 import tech.mcverse.metasky.model.Booking;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
-
+import tech.mcverse.metasky.repository.BookingRepo;
+import java.util.*;
+import java.util.stream.Collectors;
 @Repository
 public class InMemoryBookingRepo implements BookingRepo {
     private final Map<String, Booking> bookings = new ConcurrentHashMap<>();
-
     @Override
     public Booking save(Booking booking) {
         bookings.put(booking.getBookingId(), booking);
@@ -65,28 +64,4 @@ public class InMemoryBookingRepo implements BookingRepo {
         return List.of();
     }
 
-    @Override
-    public List<Booking> findByStatus(BookingStatus status) {
-        return bookings.values().stream()
-                .filter(booking -> booking.getStatus() == status)
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Booking> findByBookingDateBetween(LocalDateTime start, LocalDateTime end) {
-        return bookings.values().stream()
-                .filter(booking -> {
-                    LocalDateTime bookingDate = booking.getBookingDate();
-                    return bookingDate.isAfter(start) && bookingDate.isBefore(end);
-                })
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Booking> findByUserIdAndStatus(String userId, BookingStatus status) {
-        return bookings.values().stream()
-                .filter(booking -> booking.getUser().getUserId().equals(userId)
-                        && booking.getStatus() == status)
-                .collect(Collectors.toList());
-    }
 }

@@ -1,5 +1,4 @@
 package tech.mcverse.metasky.external;
-
 public class CurrencyExchange {
   String quotCurrency;
   String baseCurrency;

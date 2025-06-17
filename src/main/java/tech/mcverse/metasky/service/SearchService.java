@@ -1,17 +1,16 @@
 package tech.mcverse.metasky.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.mcverse.metasky.model.*;
 import java.util.List;
 import java.util.Collections;
 
 @Service
-public class UnifiedSearchService {
+public class SearchService {
     private final FlightSearchService flightSearchService;
     private final CarSearchService carSearchService;
 
-    public UnifiedSearchService(FlightSearchService flightSearchService, CarSearchService carSearchService) {
+    public SearchService(FlightSearchService flightSearchService, CarSearchService carSearchService) {
         this.flightSearchService = flightSearchService;
         this.carSearchService = carSearchService;
     }
